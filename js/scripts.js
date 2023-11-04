@@ -6,6 +6,11 @@ const foundersTitle = document.querySelector(".founders_title");
 const foundersText = document.querySelector(".founders_text");
 const foundersFoto = document.querySelector(".founders_foto");
 
+const pediatricians = document.querySelector("#pediatricians");
+const medsisters = document.querySelector("#medsisters");
+const consultants = document.querySelector("#consultants");
+const ibclc = document.querySelector("#IBCLC");
+
 const buttonLeft = document.querySelector(".founders_left");
 const buttonRight = document.querySelector(".founders_right");
 const image = document.querySelector(".image");
@@ -79,6 +84,21 @@ documentsRight.addEventListener("click", nextImageDocuments);
 trainingLeft.addEventListener("click", previousImageTraining);
 trainingRight.addEventListener("click", nextImageTraining);
 
+let a = 0;
+
+function changeFounderAuto() {
+  if (a >= foundersItems.titles.length) {
+    a = 0;
+  }
+  foundersTitle.textContent = foundersItems.titles[a];
+  foundersText.textContent = foundersItems.texts[a];
+  image.src = foundersItems.srcImage[a];
+  image.alt = foundersItems.altImage[a];
+  a = a + 1;
+}
+
+setInterval(changeFounderAuto, 4000);
+
 let i = 0;
 
 function nextFounder() {
@@ -103,6 +123,42 @@ function previousFounder() {
   i = i - 1;
 }
 
+// -----------------------------------------
+const time = 2000;
+const step = 1;
+
+function outNum(num, elem) {
+  n = 0;
+  let t = Math.round(time / (num / step));
+  let interval = setInterval(() => {
+    n = n + step;
+    if (n === num) {
+      clearInterval(interval);
+    }
+    elem.innerHTML = n;
+    // console.log(e.textContent);
+  }, t);
+}
+
+outNum(100, pediatricians);
+setTimeout(() => outNum(100, medsisters), 3000);
+setTimeout(() => outNum(100, consultants), 6000);
+setTimeout(() => outNum(100, ibclc), 9000);
+
+// ======================================
+let b = 0;
+
+function changeImageActionsAuto() {
+  if (b >= actionsItems.srcImage.length) {
+    b = 0;
+  }
+  actionsImage.src = actionsItems.srcImage[b];
+  console.log(actionsImage.src);
+  actionsImage.alt = actionsItems.altImage[b];
+  b = b + 1;
+}
+setInterval(changeImageActionsAuto, 4000);
+
 let j = 0;
 
 function nextImageActions() {
@@ -124,6 +180,18 @@ function previousImageActions() {
   j = j - 1;
 }
 
+let c = 0;
+
+function changeImageDocumentsAuto() {
+  if (c >= documentsItems.srcImage.length) {
+    c = 0;
+  }
+  documentsImage.src = documentsItems.srcImage[c];
+  documentsImage.alt = documentsItems.altImage[c];
+  c = c + 1;
+}
+setInterval(changeImageDocumentsAuto, 4000);
+
 let k = 0;
 
 function nextImageDocuments() {
@@ -131,7 +199,6 @@ function nextImageDocuments() {
     return;
   }
   documentsImage.src = documentsItems.srcImage[k + 1];
-  console.log(documentsImage.src);
   documentsImage.alt = documentsItems.altImage[k + 1];
   k = k + 1;
 }
@@ -144,6 +211,18 @@ function previousImageDocuments() {
   documentsImage.alt = documentsItems.altImage[k - 1];
   k = k - 1;
 }
+
+let d = 0;
+
+function changeImageTrainingAuto() {
+  if (d >= trainingItems.srcImage.length) {
+    d = 0;
+  }
+  trainingImage.src = trainingItems.srcImage[d];
+  trainingImage.alt = trainingItems.altImage[d];
+  d = d + 1;
+}
+setInterval(changeImageTrainingAuto, 4000);
 
 let m = 0;
 
