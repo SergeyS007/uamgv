@@ -84,20 +84,20 @@ documentsRight.addEventListener("click", nextImageDocuments);
 trainingLeft.addEventListener("click", previousImageTraining);
 trainingRight.addEventListener("click", nextImageTraining);
 
-let a = 0;
+// let a = 0;
 
-function changeFounderAuto() {
-  if (a >= foundersItems.titles.length) {
-    a = 0;
-  }
-  foundersTitle.textContent = foundersItems.titles[a];
-  foundersText.textContent = foundersItems.texts[a];
-  image.src = foundersItems.srcImage[a];
-  image.alt = foundersItems.altImage[a];
-  a = a + 1;
-}
+// function changeFounderAuto() {
+//   if (a >= foundersItems.titles.length) {
+//     a = 0;
+//   }
+//   foundersTitle.textContent = foundersItems.titles[a];
+//   foundersText.textContent = foundersItems.texts[a];
+//   image.src = foundersItems.srcImage[a];
+//   image.alt = foundersItems.altImage[a];
+//   a = a + 1;
+// }
 
-setInterval(changeFounderAuto, 4000);
+// setInterval(changeFounderAuto, 4000);
 
 let i = 0;
 
@@ -124,11 +124,11 @@ function previousFounder() {
 }
 
 // -----------------------------------------
-const time = 2000;
+const time = 3000;
 const step = 1;
 
 function outNum(num, elem) {
-  n = 0;
+  let n = 0;
   let t = Math.round(time / (num / step));
   let interval = setInterval(() => {
     n = n + step;
@@ -141,9 +141,9 @@ function outNum(num, elem) {
 }
 
 outNum(100, pediatricians);
-setTimeout(() => outNum(100, medsisters), 3000);
-setTimeout(() => outNum(100, consultants), 6000);
-setTimeout(() => outNum(100, ibclc), 9000);
+outNum(100, medsisters);
+outNum(100, consultants);
+outNum(100, ibclc);
 
 // ======================================
 let b = 0;
@@ -292,29 +292,20 @@ function createTextItems() {
   breatheList.append(...items);
 }
 
-// function createFoundersItems() {
-//   const items = [];
-//   for (let i = 0; i < 3; i++) {
-//     const item = document.createElement("p");
-//     item.type = "text";
-//     item.dataset.text = foundersItems.texts[i];
+const images = document.querySelectorAll(".founders_foto .image");
+const titles = document.querySelectorAll(".founders_info .founders_title");
+const texts = document.querySelectorAll(".founders_info .founders_text");
+console.log("images ", images);
+let currentImage = 0;
+const imageInterval = setInterval(nextImage, 4000);
 
-//     items.push(item);
-//   }
-//   console.log(items);
-//   foundersHeader.append(...items);
-// }
-
-// function createActionsItems() {
-//   const items = [];
-//   for (let i = 0; i < 3; i++) {
-//     const item = document.createElement("img");
-//     item.type = "image";
-//     item.src = imagesItems.srcImage[i];
-//     item.alt = imagesItems.altImage[i];
-
-//     items.push(item);
-//   }
-//   console.log(items);
-//   imageActions.append(...items);
-// }
+function nextImage() {
+  images[currentImage].className = "image";
+  titles[currentImage].className = "founders_title";
+  texts[currentImage].className = "founders_text";
+  currentImage = (currentImage + 1) % images.length;
+  console.log("currentImage ", currentImage);
+  images[currentImage].className = "image showing";
+  titles[currentImage].className = "founders_title showing";
+  texts[currentImage].className = "founders_text showing";
+}
