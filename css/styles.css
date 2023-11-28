@@ -1,6 +1,8 @@
 body {
   margin: 8px;
   font-family: sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .about {
@@ -26,7 +28,7 @@ body {
   padding-top: 125px;
   margin-left: 30px;
 }
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 768px) {
   .wellcome-left {
     margin-left: 172px;
   }
@@ -47,7 +49,7 @@ body {
   line-height: 1.4;
   margin-bottom: 28px;
 }
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 768px) {
   .wellcome_text {
     width: 435px;
   }
@@ -76,15 +78,12 @@ body {
     background-image: url(/images/Baner.png);
   }
 }
-
 @media screen and (min-width: 1200px) {
   .breathe {
     display: flex;
     gap: 104px;
     /* margin-bottom: 60px; */
   }
-}
-.breathe_bg {
 }
 @media screen and (min-width: 1200px) {
   .breathe_bg {
@@ -138,7 +137,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 768px) {
   .breathe_text {
     width: 415px;
     height: 240px;
@@ -347,18 +346,21 @@ body {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  padding: 0;
   /* position: absolute;
   top: 280px; */
   /* left: 20px; */
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .achievements_list {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     /* position: absolute;
     top: 280px; */
     /* left: 20px; */
@@ -428,18 +430,13 @@ body {
   .actions_image {
     width: 712px;
     height: 520px;
-    margin-right: 129px;
+    margin-right: 20px;
   }
 }
 .actions {
   width: 100%;
   margin-bottom: 50px;
   /* display: flex; */
-}
-@media screen and (min-width: 680px) and (max-width: 1199px) {
-  .actions {
-    /* display: flex; */
-  }
 }
 @media screen and (min-width: 1200px) {
   .actions {
@@ -451,7 +448,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .actions_wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -460,6 +457,8 @@ body {
 @media screen and (min-width: 1200px) {
   .actions_wrapper {
     align-items: baseline;
+    margin-right: 129px;
+    margin-left: auto;
   }
 }
 .actions_header {
@@ -517,7 +516,7 @@ body {
   top: 410px;
   left: 200px;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .actions_left {
     top: 670px;
     left: 320px;
@@ -530,7 +529,7 @@ body {
     margin-left: 320px;
   }
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .actions_right {
     top: 670px;
     left: 370px;
@@ -547,10 +546,7 @@ body {
   position: relative;
   width: 100%;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
-  .documents {
-  }
-}
+
 @media screen and (min-width: 1200px) {
   .documents {
     display: flex;
@@ -575,7 +571,7 @@ body {
   top: 330px;
   width: 100%;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .documents_wrapper {
     top: 620px;
   }
@@ -584,7 +580,8 @@ body {
   .documents_wrapper {
     width: 416px;
     position: static;
-    margin-left: 174px;
+    margin-right: 0;
+    margin-left: auto;
   }
 }
 .documents_text {
@@ -622,7 +619,7 @@ body {
   animation-delay: 2000ms;
   animation-iteration-count: infinite;
 }
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 768px) {
   .documents_foto {
     width: 712px;
     height: 520px;
@@ -678,7 +675,7 @@ body {
   width: 100%;
   margin-top: 500px;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .training {
     margin-top: 550px;
   }
@@ -710,7 +707,7 @@ body {
   .training_image {
     width: 712px;
     height: 520px;
-    margin-right: 129px;
+    margin-right: 20px;
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
   }
@@ -720,7 +717,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .training_wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -729,6 +726,8 @@ body {
 @media screen and (min-width: 1200px) {
   .training_wrapper {
     align-items: baseline;
+    margin-right: 129px;
+    margin-left: auto;
   }
 }
 .training_header {
@@ -779,7 +778,7 @@ body {
   top: 2130px;
   left: 180px;
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .training_left {
     top: 2900px;
     left: 320px;
@@ -792,7 +791,7 @@ body {
     margin-left: 320px;
   }
 }
-@media screen and (min-width: 680px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .training_right {
     top: 2900px;
     left: 370px;
@@ -824,4 +823,9 @@ body {
   100% {
     opacity: 1;
   }
+}
+.everybody {
+  width: 1440px;
+  height: 812px;
+  background-image: url(../images/achivements_bg.png);
 }
