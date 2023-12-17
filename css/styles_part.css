@@ -781,7 +781,7 @@ body {
   position: relative;
   width: 100%;
   height: 100px;
-  background-image: linear-gradient(to right, #ce1e61 50%, #f789a7 100%);
+  background-image: linear-gradient(to right, #ce1e61 25%, #ffffff 100%);
 }
 @media screen and (min-width: 768px) {
   .connection {
@@ -908,7 +908,7 @@ body {
 @media screen and (min-width: 1200px) {
   .specialists_on {
     top: -365px;
-    left: 350px;
+    left: -40px;
     width: 330px;
   }
 }

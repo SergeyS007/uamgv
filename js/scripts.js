@@ -26,6 +26,7 @@ const documentsImage = document.querySelector(".documents_image");
 const trainingLeft = document.querySelector(".training_left");
 const trainingRight = document.querySelector(".training_right");
 const trainingImage = document.querySelector(".training_image");
+const training1Image = document.querySelector(".training1_image");
 
 const foundersItems = {
   titles: [
@@ -75,14 +76,14 @@ const trainingItems = {
 };
 
 breatheList.addEventListener("click", selectItem);
-buttonLeft.addEventListener("click", previousFounder);
-buttonRight.addEventListener("click", nextFounder);
-actionsLeft.addEventListener("click", previousImageActions);
-actionsRight.addEventListener("click", nextImageActions);
-documentsLeft.addEventListener("click", previousImageDocuments);
-documentsRight.addEventListener("click", nextImageDocuments);
-trainingLeft.addEventListener("click", previousImageTraining);
-trainingRight.addEventListener("click", nextImageTraining);
+// buttonLeft.addEventListener("click", previousFounder);
+// buttonRight.addEventListener("click", nextFounder);
+// actionsLeft.addEventListener("click", previousImageActions);
+// actionsRight.addEventListener("click", nextImageActions);
+// documentsLeft.addEventListener("click", previousImageDocuments);
+// documentsRight.addEventListener("click", nextImageDocuments);
+// trainingLeft.addEventListener("click", previousImageTraining);
+// trainingRight.addEventListener("click", nextImageTraining);
 
 // let a = 0;
 
@@ -140,12 +141,18 @@ function outNum(num, elem) {
   }, t);
 }
 
-outNum(100, pediatricians);
-outNum(100, medsisters);
-outNum(100, consultants);
-outNum(100, ibclc);
-
+window.addEventListener("scroll", () => {
+  let posTop = window.pageYOffset;
+  if (posTop > 2350 && posTop < 2500) {
+    outNum(100, pediatricians);
+    outNum(100, medsisters);
+    outNum(100, consultants);
+    outNum(100, ibclc);
+  }
+});
 // ======================================
+
+// ============================================
 let b = 0;
 
 function changeImageActionsAuto() {
@@ -223,6 +230,20 @@ function changeImageTrainingAuto() {
   d = d + 1;
 }
 setInterval(changeImageTrainingAuto, 4000);
+
+let d1 = 0;
+
+function changeImageTraining1Auto() {
+  if (d1 >= trainingItems.srcImage.length) {
+    d1 = 0;
+  }
+  training1Image.src = trainingItems.srcImage[d1];
+  training1Image.alt = trainingItems.altImage[d1];
+  // setInterval(training1Image.classList.toggle("showImg"), 2000);
+
+  d1 = d1 + 1;
+}
+setInterval(() => training1Image.classList.toggle("showImg"), 1000);
 
 let m = 0;
 

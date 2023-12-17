@@ -11,8 +11,13 @@ body {
 }
 .wellcome {
   margin-bottom: 60px;
-  background-image: url(/images/Baner.png);
-  background-repeat: no-repeat;
+}
+@media screen and (min-width: 480px) {
+  .wellcome {
+    margin-bottom: 60px;
+    background-image: url(/images/Baner.png);
+    background-repeat: no-repeat;
+  }
 }
 @media screen and (min-width: 1200px) {
   .wellcome {
@@ -22,11 +27,27 @@ body {
     background-image: none;
   }
 }
+.header_bg {
+  width: 375px;
+  height: 335px;
+  background-image: url(/images/Baner_mobile.png);
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 480px) {
+  .header_bg {
+    display: none;
+  }
+}
 .wellcome-left {
-  width: 535px;
-  height: 570px;
-  padding-top: 125px;
-  margin-left: 30px;
+  width: 100%;
+  /* height: 570px; */
+  /* padding-top: 350px; */
+  /* margin-left: 16px; */
+}
+@media screen and (min-width: 480px) {
+  .wellcome-left {
+    padding-top: 250px;
+  }
 }
 @media screen and (min-width: 768px) {
   .wellcome-left {
@@ -34,20 +55,33 @@ body {
   }
 }
 .wellcome_header {
-  width: 299px;
-  height: 84px;
+  width: 323px;
+  height: 22px;
   font-weight: 600;
-  font-size: 33px;
-  line-height: 1.27;
+  font-size: 18px;
+  line-height: 2.33;
   color: #090909;
+  margin: 0;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 480px) {
+  .wellcome_header {
+    width: 299px;
+    height: 84px;
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 1.27;
+  }
 }
 .wellcome_text {
-  width: 300px;
+  width: 343px;
   /* height: 500px; */
   font-size: 16px;
   line-height: 1.4;
   margin-bottom: 28px;
+  margin-left: 16px;
 }
 @media screen and (min-width: 768px) {
   .wellcome_text {
@@ -64,6 +98,14 @@ body {
   height: 47px;
   border-radius: 4px;
   background-color: #ce1e61;
+  margin: 0;
+  margin-left: 97px;
+  margin-right: auto;
+}
+@media screen and (min-width: 480px) {
+  .wellcome_button {
+    margin-left: 16px;
+  }
 }
 .wellcome_span {
   font-weight: 700;
@@ -298,8 +340,10 @@ body {
 }
 
 .image {
-  width: 800px;
+  width: 500px;
   position: absolute;
+  left: 100px;
+  top: 100px;
   opacity: 0;
   z-index: 1;
   -webkit-transition: opacity 1s;
@@ -308,9 +352,16 @@ body {
   transition: opacity 1s;
   margin-top: 200px;
 }
+@media screen and (min-width: 400px) {
+  .image {
+    width: 700px;
+    left: 10px;
+    top: 10px;
+  }
+}
 @media screen and (min-width: 768px) {
   .image {
-    width: 1000px;
+    width: 850px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -755,6 +806,7 @@ body {
 .training {
   width: 100%;
   margin-top: 500px;
+  padding-bottom: 200px;
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .training {
@@ -932,4 +984,22 @@ body {
   height: 65px;
   margin-right: 10px;
   background-image: url(../images/principles-icon.png);
+}
+.training1_foto {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.training1_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translateX(-100%);
+}
+.showImg {
+  transform: translateX(0);
 }
