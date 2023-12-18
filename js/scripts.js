@@ -164,7 +164,14 @@ function changeImageActionsAuto() {
   actionsImage.alt = actionsItems.altImage[b];
   b = b + 1;
 }
-setInterval(changeImageActionsAuto, 4000);
+setInterval(() => {
+  actionsImage.classList.add("showImg");
+  const timerId = setTimeout(() => {
+    actionsImage.classList.remove("showImg");
+  }, 4000);
+
+  changeImageActionsAuto();
+}, 8000);
 
 let j = 0;
 
@@ -197,7 +204,16 @@ function changeImageDocumentsAuto() {
   documentsImage.alt = documentsItems.altImage[c];
   c = c + 1;
 }
-setInterval(changeImageDocumentsAuto, 4000);
+// setInterval(changeImageDocumentsAuto, 4000);
+
+setInterval(() => {
+  documentsImage.classList.add("showImg");
+  const timerId = setTimeout(() => {
+    documentsImage.classList.remove("showImg");
+  }, 4000);
+
+  changeImageDocumentsAuto();
+}, 8000);
 
 let k = 0;
 
@@ -229,21 +245,16 @@ function changeImageTrainingAuto() {
   trainingImage.alt = trainingItems.altImage[d];
   d = d + 1;
 }
-setInterval(changeImageTrainingAuto, 4000);
+// setInterval(changeImageTrainingAuto, 4000);
 
-let d1 = 0;
+setInterval(() => {
+  trainingImage.classList.add("showImg");
+  const timerId = setTimeout(() => {
+    trainingImage.classList.remove("showImg");
+  }, 4000);
 
-function changeImageTraining1Auto() {
-  if (d1 >= trainingItems.srcImage.length) {
-    d1 = 0;
-  }
-  training1Image.src = trainingItems.srcImage[d1];
-  training1Image.alt = trainingItems.altImage[d1];
-  // setInterval(training1Image.classList.toggle("showImg"), 2000);
-
-  d1 = d1 + 1;
-}
-setInterval(() => training1Image.classList.toggle("showImg"), 1000);
+  changeImageTrainingAuto();
+}, 8000);
 
 let m = 0;
 

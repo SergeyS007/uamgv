@@ -550,13 +550,19 @@ body {
 }
 .actions_image {
   width: 350px;
-  animation-name: changeOpacity;
+  /* animation-name: changeOpacity;
   animation-duration: 4000ms;
   animation-timing-function: linear;
   animation-delay: 2000ms;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   /* height: 520px; */
   /* margin-right: 129px; */
+  transition-property: transform;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 1000ms;
+
+  transform: translateX(-100%);
 }
 @media screen and (min-width: 680px) {
   .actions_image {
@@ -745,11 +751,17 @@ body {
 }
 .documents_image {
   width: 100%;
-  animation-name: changeOpacity;
+  /* animation-name: changeOpacity;
   animation-duration: 4000ms;
   animation-timing-function: linear;
   animation-delay: 2000ms;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
+  transition-property: transform;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 1000ms;
+
+  transform: translateX(+100%);
 }
 @media screen and (min-width: 768px) {
   .documents_foto {
@@ -830,11 +842,17 @@ body {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   object-fit: cover;
-  animation-name: changeOpacity;
+  /* animation-name: changeOpacity;
   animation-duration: 4000ms;
   animation-timing-function: linear;
   animation-delay: 2000ms;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
+  transition-property: transform;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 1000ms;
+
+  transform: translateX(-100%);
 }
 @media screen and (min-width: 680px) {
   .training_image {
@@ -997,6 +1015,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  transition-property: transform;
+  transition-duration: 3000ms;
+  transition-timing-function: linear;
+  transition-delay: 1000ms;
 
   transform: translateX(-100%);
 }
